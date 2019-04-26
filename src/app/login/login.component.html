@@ -1,0 +1,25 @@
+<form [formGroup]="loginForm" (submit)="login()">
+  <div class="imgcontainer">
+    <img src="https://blog.valoxy.org/wp-content/uploads/2013/07/gestion-des-stocks.png" alt="Avatar" class="avatar">
+  </div>
+
+  <div class="container">
+    <label for="username"><b>Identifiant :</b></label>
+    <input type="text" id="username" name="username" formControlName="username" [(ngModel)]="credentials.username"
+           placeholder="Entrez identifiant">
+
+    <label for="password"><b>Mot de passe :</b></label>
+    <input type="password" id="password" name="password" formControlName="password" [(ngModel)]="credentials.password"
+           placeholder="Entrez mot de passe">
+
+    <button type="submit">Connexion</button>
+    <!--<label>
+      <input type="checkbox" checked="checked" name="remember">Se souvenir de moi
+    </label>-->
+  </div>
+
+  <!--<div class="container" style="background-color:#f1f1f1">
+    <button type="button" class="cancelbtn">Cancel</button>
+    <span class="psw">Forgot <a href="#">password?</a></span>
+  </div>-->
+</form>

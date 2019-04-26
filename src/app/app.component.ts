@@ -8,16 +8,8 @@ import {Router} from "@angular/router";
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit{
-  //title = 'my-app';
-  showHideSideBar: boolean= false;
 
-  constructor(private appService:AppService,private router:Router){
-
-  }
-
-  onShowSideBarChange(showHideSideBar){
-    this.showHideSideBar=showHideSideBar;
-  }
+  constructor(private appService:AppService,private router:Router){ }
 
   ngOnInit(){
     if(!this.appService.authendicated){

@@ -9,23 +9,27 @@ import {HomeComponent} from "./home/home.component";
 export const appRoutes: Routes = [
   {
     path:'home',
-    component:HomeComponent
+    component:HomeComponent,
+    children:[
+      {
+        path:'produit',
+        component:ProduitComponent,
+        resolve:
+          {
+            produits: ProduitResolver
+          },
+        outlet:'contentOutlet',
+      },
+      {
+        path:'dashboard',
+        component:DashboardComponent,
+        outlet:'contentOutlet',
+      },
+    ]
   },
   {
     path:'login',
     component:LoginComponent
-  },
-  {
-    path:'produit',
-    component:ProduitComponent,
-    resolve:
-      {
-        produits: ProduitResolver
-      }
-  },
-  {
-    path:'dashboard',
-    component:DashboardComponent
   },
   {
     path:'',
